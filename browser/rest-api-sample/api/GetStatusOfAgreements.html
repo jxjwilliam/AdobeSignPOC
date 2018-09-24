@@ -61,6 +61,12 @@
 
                             //Display details of each agreement.
                             var userAgreementList = userAgreements.getUserAgreementList();
+//william:
+if(typeof userAgreementList === 'undefined') {
+  ApiUtils.info('Agreement List is empty.');
+  return;
+}
+
                             for (var i = 0; i < userAgreementList.length; i++) {
                                 if (agreementCountLimit === 0) {
                                     break;

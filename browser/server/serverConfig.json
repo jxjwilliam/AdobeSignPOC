@@ -1,6 +1,6 @@
 {
   "description" : "Port for running local HTTPS server",
-  "serverPort" : 8082,
+  "serverPort" : 8083,
 
   "description" : "Relative path of keystore file for local server",
   "keyStoreFile" : "key.pem",

@@ -38,7 +38,7 @@
                       .then(function(authorizationUrl){
 //william:
 if(/https:\/\/secure.echosign.com/.test(authorizationUrl)) {
-  authorizationUrl = authorizationUrl.replace('https://secure.echosign.com', 'https://secure.na2.echosign.com')        ;
+  authorizationUrl = authorizationUrl.replace('https://secure.echosign.com', 'https://hsbcsg.in1.echosign.com');
  }
                           window.location.replace(authorizationUrl);
                       })
@@ -57,9 +57,9 @@ if(/https:\/\/secure.echosign.com/.test(authorizationUrl)) {
                 <div class="form-group">
                     <ul class="nav nav-list">
                         <li class="nav-header" style="color: black">client_id</li>
-                        <li><input class="input-xlarge" value="CBJCHBCAABAAQ6_86HQE1udezRmIJi-8x1Hbyp1lh1HJ" type="text" name="client_id" id="client_id"></li>
+                        <li><input class="input-xlarge" value="CBJCHBCAABAAMJCk8VFHvK5FbSlmEdPn2DRjLhnHAEZO" type="text" name="client_id" id="client_id"></li>
                         <li class="nav-header" style="color: black">redirect_uri</li>
-                        <li><input class="input-xlarge" value="https://159.138.45.254:8082/browser/rest-api-sample/api/oAuth/redirectUri" type="text" name="redirect_uri" id="redirect_uri"></li>
+                        <li><input class="input-xlarge" value="https://159.138.45.254:8083/browser/rest-api-sample/api/oAuth/redirectUri" type="text" name="redirect_uri" id="redirect_uri"></li>
                         <li class="nav-header" style="color: black">scope</li>
                         <li><input class="input-xlarge" value="user_login:self user_write:self" type="text" name="scope" id="scopes"></li>
                     </ul>

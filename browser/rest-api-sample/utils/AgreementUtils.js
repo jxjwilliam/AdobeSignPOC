@@ -18,8 +18,15 @@
   }
   root.AdobeSignSdk.AgreementUtils = factory(root.AdobeSignSdk, root.AdobeSignSdk.TransientDocumentUtils, root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
 
+  //root.AdobeSignSdk.AgreementUtils = factory(root.AdobeSignSdk, require('../../../rest-api-sample/utils/TransientDocumentUtils'), root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
+
 }(this, function(AdobeSignSdk, TransientDocumentUtils, Errors, ApiUtils, Constants) {
   'use strict';
+
+  if(typeof TransientDocumentUtils === 'undefined') {
+      //TransientDocumentUtils = require('../../../rest-api-sample/utils/TransientDocumentUtils.js');
+      console.log('william: TransientDocumentUtils is undefined.');
+  }
 
   /**
    * Util functions for Agreement resource.
@@ -293,6 +300,11 @@
     return AgreementUtils.getAllAgreements()
                          .then(function(userAgreements) {
                            var userAgreementList = userAgreements.getUserAgreementList();
+
+//william: can not read property 'length' of undefined.
+if(typeof userAgreementList === 'undefined') {
+	return null;
+}
 
                            //Find first agreement which is out for signature and return its agreement id.
                            for (var i=0; i < userAgreementList.length; i++){
