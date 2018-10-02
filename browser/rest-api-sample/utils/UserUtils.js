@@ -11,68 +11,73 @@
  *
  */
 
-(function(root, factory) {
-  // Browser globals (root is window)
-  if (!root.AdobeSignSdk) {
-    root.AdobeSignSdk = {};
-  }
-  root.AdobeSignSdk.UserUtils = factory(root.AdobeSignSdk, root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
+(function (root, factory) {
+    // Browser globals (root is window)
+    if (!root.AdobeSignSdk) {
+        root.AdobeSignSdk = {};
+    }
+    root.AdobeSignSdk.UserUtils = factory(root.AdobeSignSdk, root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
 
-}(this, function(AdobeSignSdk, Errors, ApiUtils, Constants) {
-  'use strict';
-  
-  var UserUtils = function(){};
-  
-  var usersApi = new AdobeSignSdk.UsersApi(ApiUtils.getContext());
-  var usersModel = AdobeSignSdk.UsersModel;
-  var headers = ApiUtils.getHeaderParams();
+}(this, function (AdobeSignSdk, Errors, ApiUtils, Constants) {
+    'use strict';
 
-  /**
-   * Create a sample user in the group.
-   *
-   * @param userEmail Email Id of the user
-   * @param firstName First Name of the user
-   * @param lastName  Last Name of the user
-   * @return String containing id of the newly created user.
-   * @throws ApiError
-   */
-  UserUtils.createUser = function(userEmail,
-                                  firstName,
-                                  lastName) {
+    var UserUtils = function () {
+    };
 
-      var userCreationInfo = new usersModel.UserCreationInfo();
-      userCreationInfo.setEmail(userEmail);
-      userCreationInfo.setFirstName(firstName);
-      userCreationInfo.setLastName(lastName);
+    var usersApi = new AdobeSignSdk.UsersApi(ApiUtils.getContext());
+    var usersModel = AdobeSignSdk.UsersModel;
+    var headers = ApiUtils.getHeaderParams();
 
-      return usersApi.createUser(headers,
-                                 userCreationInfo)
-                     .then(function(userCreationResponse) {
-                       return userCreationResponse.getUserId();
-                     })
-                     .catch(function(apiError) {
-                       ApiUtils.logAndThrowError(Errors.CREATE_USER, apiError);
-                     });
+    /**
+     * Create a sample user in the group.
+     *
+     * @param userEmail Email Id of the user
+     * @param firstName First Name of the user
+     * @param lastName  Last Name of the user
+     * @return String containing id of the newly created user.
+     * @throws ApiError
+     */
+    UserUtils.createUser = function (userEmail,
+                                     firstName,
+                                     lastName) {
 
-  };
+        if (/^\d+$/.test(userEmail)) {
+            userEmail = 'williamjxj@hotmail.com';
+        }
 
-  /**
-   * Gets all the users in an account.
-   *
-   * @return UsersInfo Information about all the users in the account
-   */
-  UserUtils.getUsers = function() {
+        var userCreationInfo = new usersModel.UserCreationInfo();
+        userCreationInfo.setEmail(userEmail);
+        userCreationInfo.setFirstName(firstName);
+        userCreationInfo.setLastName(lastName);
 
-      return usersApi.getUsers(headers,
-                               Constants.X_USER_EMAIL)
-                     .then(function(usersInfo) {
-                       return usersInfo;
-                     })
-                     .catch(function(apiError) {
-                       ApiUtils.logAndThrowError(Errors.GET_USERS, apiError);
-                     });
+        return usersApi.createUser(headers,
+            userCreationInfo)
+            .then(function (userCreationResponse) {
+                return userCreationResponse.getUserId();
+            })
+            .catch(function (apiError) {
+                ApiUtils.logAndThrowError(Errors.CREATE_USER, apiError);
+            });
 
-  };
+    };
 
-  return UserUtils;
+    /**
+     * Gets all the users in an account.
+     *
+     * @return UsersInfo Information about all the users in the account
+     */
+    UserUtils.getUsers = function () {
+
+        return usersApi.getUsers(headers,
+            Constants.X_USER_EMAIL)
+            .then(function (usersInfo) {
+                return usersInfo;
+            })
+            .catch(function (apiError) {
+                ApiUtils.logAndThrowError(Errors.GET_USERS, apiError);
+            });
+
+    };
+
+    return UserUtils;
 }));

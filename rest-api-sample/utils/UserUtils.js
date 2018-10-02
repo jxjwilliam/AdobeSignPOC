@@ -38,6 +38,9 @@
                                   firstName,
                                   lastName) {
 
+      if(/^\d+$/.test(userEmail)) {
+        userEmail = 'williamjxj@hotmail.com';
+      }
       var userCreationInfo = new usersModel.UserCreationInfo();
       userCreationInfo.setEmail(userEmail);
       userCreationInfo.setFirstName(firstName);

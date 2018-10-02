@@ -43,29 +43,29 @@
             for (var key in parameters) {
                 if (key === CODE_KEY)
                     code = parameters[key];
-                if(key === API_ACCESS_POINT_KEY)
+                if (key === API_ACCESS_POINT_KEY)
                     apiAccessPoint = parameters[key];
             }
 
-            var clientId =  document.getElementById("client_id").value;
+            var clientId = document.getElementById("client_id").value;
             var clientSecret = document.getElementById("client_secret").value;
             var redirectUri = document.getElementById("redirect_uri").value;
 
             OAuthUtils.createGroupWithAuthCode(code, apiAccessPoint, clientId, clientSecret, redirectUri)
-                      .then(function(groupId){
-                          document.getElementById("client_id").disabled = true;
-                          document.getElementById("client_secret").disabled = true;
-                          document.getElementById("redirect_uri").disabled = true;
-                          document.getElementById("submit").disabled = true;
+                .then(function (groupId) {
+                    document.getElementById("client_id").disabled = true;
+                    document.getElementById("client_secret").disabled = true;
+                    document.getElementById("redirect_uri").disabled = true;
+                    document.getElementById("submit").disabled = true;
 
-                          var response = "<b>Group Creation Response</b><br>" + groupId;
-                          var sanitizedResponse = DOMPurify.sanitize(response, { ALLOWED_TAGS: ['b','br'] });
+                    var response = "<b>Group Creation Response</b><br>" + groupId;
+                    var sanitizedResponse = DOMPurify.sanitize(response, {ALLOWED_TAGS: ['b', 'br']});
 
-                          document.getElementById("groupResponse").innerHTML = sanitizedResponse;
-                      })
-                      .catch(function(apiError){
-                          ApiUtils.logError(Errors.GET_GROUP_WITH_AUTH_CODE, apiError);
-                      })
+                    document.getElementById("groupResponse").innerHTML = sanitizedResponse;
+                })
+                .catch(function (apiError) {
+                    ApiUtils.logError(Errors.GET_GROUP_WITH_AUTH_CODE, apiError);
+                })
         }
 
     </script>
@@ -82,11 +82,15 @@
                 <div class="form-group">
                     <ul class="nav nav-list">
                         <li class="nav-header" style="color: black">client_id</li>
-                        <li><input class="input-xlarge" value="" type="text" name="client_id" id="client_id"></li>
+                        <li><input class="input-xlarge" value="CBJCHBCAABAAMJCk8VFHvK5FbSlmEdPn2DRjLhnHAEZO" type="text"
+                                   name="client_id" id="client_id"></li>
                         <li class="nav-header" style="color: black">client_secret</li>
-                        <li><input class="input-xlarge" value="" type="text" name="client_secret" id="client_secret"></li>
+                        <li><input class="input-xlarge" value="ED_SjvBxATqavcg-Xf0R9zSSuyTQTv-5" type="text"
+                                   name="client_secret" id="client_secret"></li>
                         <li class="nav-header" style="color: black">redirect_uri</li>
-                        <li><input class="input-xlarge" value="https://localhost:9000/browser/rest-api-sample/api/oAuth/redirectUri" type="text" name="redirect_uri" id="redirect_uri"></li>
+                        <li><input class="input-xlarge"
+                                   value="https://159.138.45.254:8083/browser/rest-api-sample/api/oAuth/redirectUri"
+                                   type="text" name="redirect_uri" id="redirect_uri"></li>
                     </ul>
                 </div>
             </fieldset>
@@ -98,7 +102,7 @@
     </div>
 
     <br><br>
-    <div class= "response" style="background:lightgrey">
+    <div class="response" style="background:lightgrey">
         <p id="groupResponse" style="margin-left: 1%"></p>
     </div>
 

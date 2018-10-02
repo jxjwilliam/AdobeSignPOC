@@ -24,25 +24,25 @@
   var Config = {
 
     //Access token to allow  the user to authorize API access. It can be generated from  the link 'https://secure.echosign.com/public/static/oauthDoc.jsp'. It must have scopes required by the corresponding samples to grant the API different levels of access to data on behalf of the end user
-    "accessToken" : "",
+    "accessToken" : "3AAABLblqZhBzC0C9Y4K7b23ToV7LPvuTP49XOjjGmOIeJDAxjY60ruFcET7mdaj9nbj3la3CERcx7NR-EoMHwv_O3Y0IOrer",
 
     //First name of the user which will be passed while creating new user
-    "userFirstName" : "Testing",
+    "userFirstName" : "Ken",
 
     //Last name of the user which will be passed while creating new user
-    "userLastName" : "User",
+    "userLastName" : "Feng",
 
     //Email address of the user which will be used as a sample user while running samples
-    "userEmail" : "",
+    "userEmail" : "ken.m.j.feng@hsbc.com.cn",
 
     //The userId or email of the user. If it is not specified, then the caller is inferred from the access token
-    "xApiUser" : null,
+    "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
 
     //The email address of the user whose details are being requested in getUsers method
-    "xUserEmail" : null,
+    "xUserEmail" : "ken.m.j.feng@hsbc.com.cn",
 
     //Prefix for the group name which will be added while creating group name at runtime using timestamp
-    "groupName" : "SampleGroup",
+    "groupName" : "Default Group",
 
     //Prefix for the agreement name which will be added while creating agreement name at runtime using timestamp
     "agreementName" : "SampleAgreement",
@@ -108,7 +108,7 @@
     "agreementCountLimit" : 1,
 
     //Environment on which the sdk will run. If no Host Environment is provided here, default Host Environment [https://api.echosign.com/] will be used
-    "envHostName" : "",
+    "envHostName" : "https://api.in1.echosign.com/",
 
     //Prefix of email address which will be used for the sample use
     "userEmailPrefix" : "",

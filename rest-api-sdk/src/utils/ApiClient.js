@@ -350,6 +350,7 @@
      returnType, addSubPath, baseUrl) {
 
      var url = _this.buildUrl(path, pathParams, addSubPath, baseUrl);
+
      var request = superagent(httpMethod, url);
 
      // set query parameters
