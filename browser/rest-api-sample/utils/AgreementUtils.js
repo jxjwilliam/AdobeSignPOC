@@ -17,13 +17,12 @@
     root.AdobeSignSdk = {};
   }
   root.AdobeSignSdk.AgreementUtils = factory(root.AdobeSignSdk, root.AdobeSignSdk.TransientDocumentUtils, root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
-  //root.AdobeSignSdk.AgreementUtils = factory(root.AdobeSignSdk, require('../../../rest-api-sample/utils/TransientDocumentUtils'), root.AdobeSignSdk.Errors, root.AdobeSignSdk.ApiUtils, root.AdobeSignSdk.Constants);
 
 }(this, function(AdobeSignSdk, TransientDocumentUtils, Errors, ApiUtils, Constants) {
   'use strict';
 
   if(typeof TransientDocumentUtils === 'undefined') {
-      //TransientDocumentUtils = require('../../../rest-api-sample/utils/TransientDocumentUtils.js');
+
       console.log('william: TransientDocumentUtils is undefined.');
   }
 
@@ -327,8 +326,7 @@ if(typeof userAgreementList === 'undefined') {
    * @return Promise containing agreement id.
    * @throws ApiError
    */
-  AgreementUtils.getAgreementId = function(agreementName,
-                                           file) {
+  AgreementUtils.getAgreementId = function(agreementName, file) {
 
     //Check if agreement exist and return agreement id.
     return AgreementUtils.isExistingAgreement(agreementName)

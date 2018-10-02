@@ -33,10 +33,10 @@
     "userLastName" : "Feng",
 
     //Email address of the user which will be used as a sample user while running samples
-    "userEmail" : "ken.m.j.feng@hsbc.com.cn",
+    "userEmail" : "williamjxj@hotmail.com", ///"ken.m.j.feng@hsbc.com.cn",
 
     //The userId or email of the user. If it is not specified, then the caller is inferred from the access token
-    "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
+    "xApiUser" : "", //"email:ken.m.j.feng@hsbc.com.cn",
 
     //The email address of the user whose details are being requested in getUsers method
     "xUserEmail" : "ken.m.j.feng@hsbc.com.cn",
