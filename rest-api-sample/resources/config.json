@@ -9,7 +9,7 @@
   "userLastName" : "Jiang",
 
   "description" : "Email address of the user which will be used as a sample user while running samples.",
-  "userEmail" : "ken.m.j.feng@hsbc.com.cn",
+  "userEmail" : "williamjxj@hotmail.com", //"ken.m.j.feng@hsbc.com.cn",
 
   "description" : "The userId or email of the user. If it is not specified, then the caller is inferred from the access token.",
   "xApiUser" : "email:jxjwilliam@sina.com",
