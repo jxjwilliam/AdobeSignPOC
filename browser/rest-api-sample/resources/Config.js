@@ -36,7 +36,7 @@
     "userEmail" : "williamjxj@hotmail.com", ///"ken.m.j.feng@hsbc.com.cn",
 
     //The userId or email of the user. If it is not specified, then the caller is inferred from the access token
-    "xApiUser" : "", //"email:ken.m.j.feng@hsbc.com.cn",
+    "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
 
     //The email address of the user whose details are being requested in getUsers method
     "xUserEmail" : "", //"ken.m.j.feng@hsbc.com.cn",
