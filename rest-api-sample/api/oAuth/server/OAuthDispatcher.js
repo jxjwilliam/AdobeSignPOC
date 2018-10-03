@@ -13,7 +13,7 @@
 
 (function(factory) {
      // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../../dist/adobe-sign-sdk'), require('../../../utils/Constants'), require('../../../utils/ApiUtils'), require('../../../utils/GroupUtils'), require('httpdispatcher'), require('fs'));
+    module.exports = factory(require('../../../../dist/adobe-sign-sdk'), require('../../../utils/Constants'), require('../../../utils/ApiUtils'), require('../../../utils/GroupUtils'), require('httpdispatcher'), require('fs'));
 }(function(AdobeSignSdk, Constants, ApiUtils, GroupUtils, httpdispatcher, fs) {
   'use strict';
 
