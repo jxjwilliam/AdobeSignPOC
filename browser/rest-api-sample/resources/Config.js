@@ -39,7 +39,7 @@
     "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
 
     //The email address of the user whose details are being requested in getUsers method
-    "xUserEmail" : "", //"ken.m.j.feng@hsbc.com.cn",
+    "xUserEmail" : null, //"ken.m.j.feng@hsbc.com.cn",
 
     //Prefix for the group name which will be added while creating group name at runtime using timestamp
     "groupName" : "Default Group",

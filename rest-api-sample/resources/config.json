@@ -1,18 +1,18 @@
 {
   "description" : "Access token to allow  the user to authorize API access. It can be generated from  the link 'https://secure.echosign.com/public/static/oauthDoc.jsp'. It must have scopes required by the corresponding samples to grant the API different levels of access to data on behalf of the end user.",
-  "accessToken" : "",
+  "accessToken" : "3AAABLblqZhCYliyobjRjQ1oKNraDDjHoCYGneovXhQoClnSfwA4J1yyQOWQOBhumGkIRO-XwHxhc9lV4bT6yWK5ciTt1FcrU",
 
   "description" : "First name of the user which will be passed while creating new user.",
-  "userFirstName" : "William",
+  "userFirstName" : "Ken",
 
   "description" : "Last name of the user which will be passed while creating new user.",
-  "userLastName" : "Jiang",
+  "userLastName" : "Feng",
 
   "description" : "Email address of the user which will be used as a sample user while running samples.",
   "userEmail" : "williamjxj@hotmail.com", //"ken.m.j.feng@hsbc.com.cn",
 
   "description" : "The userId or email of the user. If it is not specified, then the caller is inferred from the access token.",
-  "xApiUser" : "email:jxjwilliam@sina.com",
+  "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
 
   "description" : "The email address of the user whose details are being requested in getUsers method.",
   "xUserEmail" : null,
@@ -69,16 +69,16 @@
   "fileOffset" : 0,
 
   "description" : "The url where the end user will be redirected after successful completion of authorization. This value must belong to the set of values specified on the OAuth Configuration page.",
-  "redirectUri" : "",
+  "redirectUri" : "https://159.138.45.254:8083/rest-api-sample/api/oAuth/server",
 
   "description" : "Value used to maintain state between the request and callback.",
   "state" : null,
 
   "description" : "Identifies the application configured on the OAuth Configuration page.",
-  "clientId" : "",
+  "clientId" : "CBJCHBCAABAAMFlSdjalOfFMcjokk8XBifk_I2Jtrv9x",
 
   "description" : "Identifies the application configured on the OAuth Configuration page.",
-  "clientSecret" : "",
+  "clientSecret" : "mGRBwpOSo65rs0oj2HZfEvHBi-lXoxAn",
 
   "description" : "Grant type for fetching the access token. Value must always be 'authorization_code'.",
   "accessTokenGrantType" : "authorization_code",
@@ -105,7 +105,7 @@
   "oAuthHtmlFile" : "api/oAuth/server/oAuth.html",
 
   "description" : "Environment on which the sdk will run. If no Host Environment is provided here, default Host Environment [https://api.echosign.com/] will be used.",
-  "envHostName" : "",
+  "envHostName" : "https://api.in1.echosign.com/",
 
   "description" : "Prefix of email address which will be used for the sample use",
   "userEmailPrefix" : "",
