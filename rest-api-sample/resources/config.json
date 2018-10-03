@@ -69,7 +69,7 @@
   "fileOffset" : 0,
 
   "description" : "The url where the end user will be redirected after successful completion of authorization. This value must belong to the set of values specified on the OAuth Configuration page.",
-  "redirectUri" : "https://159.138.45.254:8084/rest-api-sample/api/oAuth/server",
+  "redirectUri" : "https://159.138.45.254:8084/redirectUri",
 
   "description" : "Value used to maintain state between the request and callback.",
   "state" : null,

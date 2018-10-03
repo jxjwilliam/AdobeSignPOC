@@ -24,9 +24,9 @@
                         <li class="nav-header" style="color: black">client_secret</li>
                         <li><input class="input-xlarge" value="mGRBwpOSo65rs0oj2HZfEvHBi-lXoxAn" type="text" name="client_secret" id="client_secretId"></li>
                         <li class="nav-header" style="color: black">redirect_uri</li>
-                        <li><input class="input-xlarge" value="https://159.138.45.254:8084/rest-api-sample/api/oAuth/server" type="text" name="redirect_uri" id="redirect_uriId"></li>
+                        <li><input class="input-xlarge" value="https://159.138.45.254:8084/redirectUri" type="text" name="redirect_uri" id="redirect_uriId"></li>
                         <li class="nav-header" style="color: black">scope</li>
-                        <li><input class="input-xlarge" value="user_login:self user_write:self" type="text" name="scope" id="scopeId"></li>
+                        <li><input class="input-xlarge" value="user_login:self user_write:account" type="text" name="scope" id="scopeId"></li>
                     </ul>
                 </div>
             </fieldset>
@@ -47,7 +47,7 @@
 
 <script>
     $(function() {
-//twitter bootstrap script5
+        //twitter bootstrap script5
 
         $("button#submit").click(function(){
             port = window.location.port,
@@ -57,10 +57,7 @@
                     data = $('form.oauth').serialize(),
                     window.open(url + data,"_self")
         });
-
     });
-
-
 
     $(document).ready(function getResponse() {
         var idx = document.URL.indexOf('?');
