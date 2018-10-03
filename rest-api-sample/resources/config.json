@@ -9,7 +9,7 @@
   "userLastName" : "Feng",
 
   "description" : "Email address of the user which will be used as a sample user while running samples.",
-  "userEmail" : "williamjxj@hotmail.com", //"ken.m.j.feng@hsbc.com.cn",
+  "userEmail" : "williamjxj@hotmail.com",
 
   "description" : "The userId or email of the user. If it is not specified, then the caller is inferred from the access token.",
   "xApiUser" : "email:ken.m.j.feng@hsbc.com.cn",
@@ -90,7 +90,7 @@
   "responseType" : "code",
 
   "description" : "Port for running local auth server",
-  "oauthServerPortKey" : 9000,
+  "oauthServerPortKey" : 8084,
 
   "description" : "This is the number of agreements for which the samples will run. Set -1/null for all agreements and 0 for no agreements.",
   "agreementCountLimit" : 1,
@@ -113,4 +113,3 @@
   "description" : "Domain of email address which will be used for the sample use",
   "userEmailDomain" : ""
 }
-
