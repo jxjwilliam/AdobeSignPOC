@@ -42629,9 +42629,9 @@ WorkflowDescription.StatusEnum = {
 
 (function(factory) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory( require('./ApiError'), require('../model/baseUris/BaseUriInfo'));
+    module.exports = factory( require('./ApiError'), require('../model/baseUris/BaseUriInfo'), require('superagent'));
 
-}(function( ApiError, BaseUriInfo) {
+}(function( ApiError, BaseUriInfo, superagent) {
   'use strict';
 
   /**
@@ -42813,11 +42813,9 @@ WorkflowDescription.StatusEnum = {
      * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
      */
     _this.isFileParam = function(param) {
+console.log('william 555555 ', param);
      // fs.ReadStream in Node.js (but not in runtime like browserify)
-     if (typeof window === 'undefined' &&
-     typeof require === 'function' &&
-     require('fs') &&
-     param instanceof require('fs').ReadStream) {
+     if (typeof window === 'undefined' && typeof require === 'function' && require('fs') ) {
         return true;
      }
      // Buffer in Node.js
@@ -43987,9 +43985,9 @@ WorkflowDescription.StatusEnum = {
  */
 (function(factory) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./SdkErrorCodes'), require('../ApiError') ,require('../StringUtil'));
+    module.exports = factory(require('./SdkErrorCodes'), require('../ApiError') ,require('../StringUtil'), require('validator'));
   
-}(function(SdkErrorCodes, ApiError, StringUtil) {
+}(function(SdkErrorCodes, ApiError, StringUtil, validator) {
   'use strict';
 
   /**
@@ -44133,8 +44131,7 @@ WorkflowDescription.StatusEnum = {
    * @param sdkErrorCode The error message that needs to be thrown.
    * @throws ApiError
    */
-  ApiValidatorHelper.validateUrlParameter = function (url,
-                                                      sdkErrorCode) {
+  ApiValidatorHelper.validateUrlParameter = function (url, sdkErrorCode) {
     if(!validator.isURL(url)){
       throw new ApiError(sdkErrorCode);
     }
